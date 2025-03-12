@@ -1,0 +1,25 @@
+{
+  "name": "taskreminder",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/arslan-86/taskReminder#readme",
+  "bugs": {
+    "url": "https://github.com/arslan-86/taskReminder/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arslan-86/taskReminder.git"
+  },
+  "license": "ISC",
+  "author": "Arslan",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
