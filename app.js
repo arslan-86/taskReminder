@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require("fs");
 
 const app = express();
 
@@ -13,7 +14,34 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    fs.readFile('./data/task.js', (err, data) => {
+        if(err) throw err; 
+        data = JSON.parse(data.toString());
+        return res.render('index', {data});
+
+    });
+})
+
+app.post('/task', async (req, res) => {
+    fs.readFile('./data/task.js', (err, data) => {
+        if(err) throw err;
+
+        data = JSON.parse(data.toString());
+
+        data.push({
+            task: req.body.text,
+            deadline: req.body.dateTime
+        });
+
+        data = JSON.stringify(data);
+
+        fs.writeFile('./data/task.js', data, "utf8", (err) => {
+            if(err) throw err;
+            console.log("The file has been saved!");  
+        })
+        
+    })
+    res.send(req.body)
 })
 
 app.listen(PORT, () => {

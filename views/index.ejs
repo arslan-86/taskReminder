@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="inputContainer">
+        <form class="inputContainer" action="/task" method="post" id="form">
             <label for="text">Task Name:</label><br>
             <input type="text" name="text" id="text" placeholder="Enter Task" required>
             <br>
@@ -20,20 +20,24 @@
         <div class="outputContainer">
             <p id="outputPara">This is task <span id="outputDate">2025-03-13</span></p>
         </div>
+        <%= data[0].task%>
+        <% if(locals.data){%> <h3>Hhd</h3><%}%>
     </div>
 
     <script>
-        const button = document.getElementById('btn');
+        // const button = document.getElementById('btn');
 
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const textInput = document.getElementById('text');
-            const dateTime  = document.getElementById("dateTime");
-            const deadline = new Date(dateTime.value);
-            const result = document.getElementById('outputPara');
+        // button.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     const textInput = document.getElementById('text');
+        //     const dateTime  = document.getElementById("dateTime");
+        //     const deadline = new Date(dateTime.value);
+        //     const result = document.getElementById('outputPara');
 
-            result.innerHTML = `${textInput.value}  Deadline:<span id="outputDate">${deadline.toLocaleDateString()}</span>`
-        })
+        //     result.innerHTML = `${textInput.value}  Deadline:<span id="outputDate">${deadline.toLocaleDateString()}</span>`;
+
+        //     document.getElementById('form').submit();
+        // })
 
     </script>
 </body>
