@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({extended: false}));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/', (req, res) => {
     fs.readFile('./data/task.js', (err, data) => {
@@ -41,7 +41,7 @@ app.post('/task', async (req, res) => {
         })
         
     })
-    res.send(req.body)
+    res.redirect('/')
 })
 
 app.listen(PORT, () => {

@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>Task Reminder</title>
 </head>
 <body>
+    <header>
+        <h1>Task Reminder</h1>
+    </header>
     <div class="container">
         <form class="inputContainer" action="/task" method="post" id="form">
             <label for="text">Task Name:</label><br>
@@ -18,10 +21,13 @@
             <button type="submit" id="btn">Submit</button>
         </form>
         <div class="outputContainer">
-            <p id="outputPara">This is task <span id="outputDate">2025-03-13</span></p>
+            <h3>All Tasks</h3>
+            <% data.forEach(item => {%> 
+                <p id="taskName"> <%= item.task%></p>
+                <p id="taskDeadline"> <%= item.deadline%></p>
+            <%})%>
         </div>
-        <%= data[0].task%>
-        <% if(locals.data){%> <h3>Hhd</h3><%}%>
+        
     </div>
 
     <script>

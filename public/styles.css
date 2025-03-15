@@ -1,0 +1,71 @@
+body {
+    background-color: #FCF6F5FF;
+    color: #00203FFF;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    /* display: flex;
+    justify-content: center; 
+    align-items: center; */
+} 
+
+header {
+    background-color: #00203FFF ;
+
+}
+
+header h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FCF6F5FF;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    margin: 2rem 0 2rem 0;
+    
+}
+
+.inputContainer, .outputContainer {
+    width: 50%;
+    margin: auto;
+}
+
+input {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button{
+    display: block;
+    margin: auto;
+    width: 20%;
+    color: #FCF6F5FF;
+    background-color:#00203FFF;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: medium;
+    padding: 4px 0;
+    border-radius: 6px;
+}
+
+button:active {
+    border: 2px solid #00203FFF;
+    color: #00203FFF;
+    background-color: #FCF6F5FF;
+}
+
+ .outputContainer{
+    
+ }
