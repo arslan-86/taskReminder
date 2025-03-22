@@ -66,6 +66,12 @@ button:active {
     background-color: #FCF6F5FF;
 }
 
- .outputContainer{
-    
- }
+.tasks {
+    font-family: Arial, sans-serif;
+    font-weight: 100;
+    background-color: white;
+    padding: 2px 2px 2px 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid #00203FFF;
+    border-radius: 6px;
+}

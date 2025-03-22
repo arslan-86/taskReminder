@@ -26,11 +26,19 @@ app.post('/task', async (req, res) => {
     fs.readFile('./data/task.js', (err, data) => {
         if(err) throw err;
 
-        data = JSON.parse(data.toString());
+        data = JSON.parse(data.toString())
 
         data.push({
             task: req.body.text,
-            deadline: req.body.dateTime
+            deadline: new Date(req.body.dateTime).toLocaleString('en-US', {
+                weekday: "short",
+                month:'short',
+                day: "numeric",
+                year: 'numeric',
+                hour: "numeric",
+                minute: "numeric",
+                hourCycle: "h12"
+            })
         });
 
         data = JSON.stringify(data);

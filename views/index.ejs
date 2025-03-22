@@ -22,10 +22,14 @@
         </form>
         <div class="outputContainer">
             <h3>All Tasks</h3>
+            
             <% data.forEach(item => {%> 
-                <p id="taskName"> <%= item.task%></p>
-                <p id="taskDeadline"> <%= item.deadline%></p>
+                <div class="tasks">
+                <p id="taskName"><%= item.task%></p>
+                <p id="taskDeadline">By: <%= item.deadline%></p>
+               </div>
             <%})%>
+        </div>
         </div>
         
     </div>
