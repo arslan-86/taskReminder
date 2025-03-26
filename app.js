@@ -1,6 +1,8 @@
+require('dotenv').config({path:'./.env'})
 const express = require('express');
 const path = require('path');
 const fs = require("fs");
+const nodemailer = require('nodemailer');
 
 const app = express();
 
@@ -50,6 +52,16 @@ app.post('/task', async (req, res) => {
         
     })
     res.redirect('/')
+})
+
+const transporter = nodemailer.createTransport({
+    host: 'stmp.ethereal.email',
+    port: 587,
+    secure: false,
+    auth: {
+        user:"arslankhan863345@gmail.com",
+        pass: process.env.PASS
+    }
 })
 
 app.listen(PORT, () => {
